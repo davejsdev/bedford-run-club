@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar/Navbar';
+
 interface Props {
 	title: string;
 }
@@ -17,6 +19,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Navbar client:load />
 		<slot />
 	</body>
 </html>
@@ -31,11 +34,20 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+
+
+		--primary-color: #091064;
+		--accent-color: #FDD44F;
+		--text-color: #13151a;
+		--background-color: #fefeff;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background: var(--background-color);
+	}
+	body {
+		margin: 0;
+		color: var(--text-color);
 	}
 	code {
 		font-family:
@@ -47,5 +59,9 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
 	}
 </style>
