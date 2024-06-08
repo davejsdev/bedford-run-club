@@ -9,12 +9,61 @@
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
   align-items: stretch;
   background-color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-top: 3px solid var(--accent-color);
   --text-color: white;
+}
+
+.line {
+  display: block;
+  height: 2px;
+  width: 1rem;
+  background-color: var(--text-color);
+}
+
+.menus {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.navMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navItem {
+  display: flex;
+  align-items: stretch;
+}
+
+.navLink, .title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover, &[aria-current='page'] {
+	  background-color: #aaa2;
+    color: var(--accent-color)
+  }
+}
+
+.navLink {
+  font-size: 0.8rem;
+}
+
+.title {
+  line-height: 1.25;
+  letter-spacing: 1.1px;
 }
 
 .navToggle {
@@ -34,48 +83,9 @@
   width: 1rem;
 }
 
-.line {
-  display: block;
-  height: 2px;
-  width: 1rem;
-  background-color: var(--text-color);
-}
-
-.navMenu {
-  list-style: none;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navItem {
-  display: flex;
-  align-items: stretch;
-}
-
-.navLink, .title {
-  display: block;
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 1rem;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-	  background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-.title {
-  display: flex;
-  line-height: 1.25;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
-}
-
-@media screen and (max-width: 768px) {
-  .navToggle {
-    display: block;
+@media screen and (max-width: 750px) {
+  .menus {
+    justify-content: flex-end;
   }
   .navMenu {
     position: absolute;
@@ -84,7 +94,6 @@
     top: 100%;
     flex-direction: column;
     background-color: var(--background-color);
-    padding: 0.5rem;
     box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.2);
 
     --text-color: var(--primary-color);
@@ -93,7 +102,18 @@
       display: none;
     }
   }
+
+  .navLink {
+    flex-grow: 1;
+    padding: 1.25rem;
+    color: var(--text-color) !important;
+  }
   
+  .navToggle {
+    display: block;
+    margin-left: -1rem;
+    flex-grow: 0;
+  }
 }
 
 .invisible {

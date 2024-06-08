@@ -8,12 +8,12 @@ import instagramLogo from "../../assets/instagram-logo.svg"
 	<p>Bedford Run Club. Halifax, Nova Scotia</p>
 	<ul class="list">
 		<li>
-			<a href="">
+			<a href="https://www.strava.com/clubs/935968" target="_blank" rel="noopener noreferrer">
 				<Image class="icon" src={stravaLogo} alt="Strava" />
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="https://www.instagram.com/bedfordrunclub" target="_blank" rel="noopener noreferrer">
 				<Image class="icon" src={instagramLogo} alt="Instagram" />
 			</a>
 		</li>
@@ -22,8 +22,6 @@ import instagramLogo from "../../assets/instagram-logo.svg"
 
 <style>
 	footer {
-		/* background-color: var(--primary-color); */
-		/* color: white; */
 		background-color: #f8f8f8;
 		padding: 2rem 1rem;
 		font-size: 0.8rem;
@@ -35,12 +33,17 @@ import instagramLogo from "../../assets/instagram-logo.svg"
 		padding: 0;
 		display: flex;
 		justify-content: start;
+		gap: 0.5rem;
+
+		a {
+			display: block;
+		}
 	}
 
 	.icon {
-		height: 1.5rem;
+		display: block;
+		height: 1.25rem;
 		width: auto;
-		margin: 0 0.5rem;
 		filter: grayscale(100%) brightness(0) opacity(0.5);
 		
 	}

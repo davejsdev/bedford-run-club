@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import ButtonLink from '../components/ButtonLink/ButtonLink';
 
 import { Image } from 'astro:assets';
@@ -8,21 +7,19 @@ import bannerImage from '../assets/brc-group.png'
 ---
 
 <Layout title="Bedford Run Club">
+	<h1>Bedford Run Club</h1>
+	<p>
+		Welcome to the Bedford Run Club! We have runners of all levels, from
+		beginners to experienced marathoners. We welcome everyone to join us!
+	</p>
 	<div class="image-wrapper">
 		<Image class="banner-image" src={bannerImage} alt="Runners on a trail"  />
 	</div>
-	<main>
-		<h1>Bedford Run Club</h1>
-		<p>
-			Welcome to the Bedford Run Club! We have runners of all levels, from
-			beginners to experienced marathoners. We welcome everyone to join us!
-		</p>
-		<h2>Weekly Run</h2>
-		<p>
-			We meet every Tuesday at 6:00 PM at the Garrison Brewery. We run a 7.2km and loop through Point Pleasant Park. After the run, we head to the brewery for a drink and socialize.
-		</p>
-		<ButtonLink href='/weekly-run'>More about our weekly run</ButtonLink>
-	</main>
+	<h2>Weekly Run</h2>
+	<p>
+		We meet every Tuesday at 6:00 PM at the Garrison Brewery. We run a 7.2km and loop through Point Pleasant Park. After the run, we head to the brewery for a drink and socialize.
+	</p>
+	<ButtonLink href='/weekly-run'>More about our weekly run</ButtonLink>
 </Layout>
 
 <style>
@@ -37,6 +34,7 @@ import bannerImage from '../assets/brc-group.png'
 		width: 100%;
 		height: auto;
 		margin-bottom: 1rem;
+		border-radius: 0.5rem;
 
 		@media screen and (max-width: 600px) {
 			width: calc(100% + 200px);
