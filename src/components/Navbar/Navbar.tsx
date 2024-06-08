@@ -22,16 +22,10 @@ const Navbar: React.FC = () => {
 			
 			<ul className={classes.navMenu} data-is-open={isOpen}>
 				<li className={classes.navItem}>
-			<a className={classes.navLink} href="/">About</a>
-
+					<a className={classes.navLink} href="/about">About</a>
 				</li>
 				<li className={classes.navItem}>
-			<a className={classes.navLink} href="/">Route</a>
-
-				</li>
-				<li className={classes.navItem}>
-			<a className={classes.navLink} href="/">Events</a>
-
+					<a className={classes.navLink} href="/routes">Route</a>
 				</li>
 			</ul>
 		</nav> 
