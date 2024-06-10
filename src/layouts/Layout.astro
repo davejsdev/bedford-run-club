@@ -1,23 +1,38 @@
 ---
+import { SEOMetadata } from 'astro-seo-metadata';
 import Footer from '../components/Footer/Footer.astro';
 import Navbar from '../components/Navbar/Navbar';
+import CoverImage from '../assets/bedford-run-club.jpg'
 
 interface Props {
-	title: string;
+	title?: string;
+	description?: string;
+	frontmatter?: {
+		title?: string;
+		description?: string;
+	};
 }
 
-const { title } = Astro.props;
+const { frontmatter, title, description = 'Join us every Tuesday at the Garrison Seaport Brewery at 6pm! Nothing fancy, just some sweat and a good time. All runners welcome.' } = Astro.props;
+
+const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} | Bedford Run Club` : 'Bedford Run Club';
+
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<SEOMetadata
+			siteName={'Bedford Run Club'}
+			title={fullTitle}
+			description={description}
+			image={CoverImage.src}
+			favicon={'/favicon.png'}
+			astroSitemap={true}
+			canonicalUrl={Astro.url.toString()}
+			type={'website'}
+			astroGenerator={true}
+		/>
 	</head>
 	<body>
 		<Navbar client:only />
