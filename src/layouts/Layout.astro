@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions, fade } from 'astro:transitions';
 import { SEOMetadata } from 'astro-seo-metadata';
 import Footer from '../components/Footer/Footer.astro';
 import Navbar from '../components/Navbar/Navbar';
@@ -7,20 +8,23 @@ import CoverImage from '../assets/bedford-run-club.jpg'
 interface Props {
 	title?: string;
 	description?: string;
+	pathname?: string;
 	frontmatter?: {
 		title?: string;
 		description?: string;
+		pathname?: string;
 	};
 }
 
-const { frontmatter, title, description = 'Join us every Tuesday at the Garrison Seaport Brewery at 6pm! Nothing fancy, just some sweat and a good time. All runners welcome.' } = Astro.props;
+const { frontmatter, title, pathname, description = 'Join us every Tuesday at the Garrison Seaport Brewery at 6pm! Nothing fancy, just some sweat and a good time. All runners welcome.' } = Astro.props;
 
 const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} | Bedford Run Club` : 'Bedford Run Club';
+
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate={fade({ duration: '0.5s' })}>
 	<head>
 		<SEOMetadata
 			siteName={'Bedford Run Club'}
@@ -33,9 +37,10 @@ const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} 
 			type={'website'}
 			astroGenerator={true}
 		/>
+		<ViewTransitions />
 	</head>
 	<body>
-		<Navbar client:only />
+		<Navbar client:load path={Astro.props.frontmatter?.pathname} />
 		<main>
 			<slot />
 		</main>
@@ -97,5 +102,13 @@ const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} 
 		padding: 0.25em 0;
 		border-bottom: 2px solid var(--accent-color);
 		color: var(--primary-color);
+	}
+
+
+	/* Strava Embed */
+	.strava-embed-root {
+		border: none !important;
+		border-width: 0 !important;
+		padding: 0;
 	}
 </style>

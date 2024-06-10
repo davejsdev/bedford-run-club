@@ -26,9 +26,20 @@
 	color: var(--text-color);
 	padding: 1rem 0.75rem;
 	transition: background-color 0.3s ease;
+
+	svg {
+		width: 1rem;
+		height: 1rem;
+	  }
   
 	&:hover .icon {
 		filter: brightness(1) contrast(1);
 	}
+
+	&:focus {
+		outline: 2px solid var(--text-color);
+		outline-offset: -2px;
+		color: var(--accent-color);
+	  }
   }
   

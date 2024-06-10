@@ -51,9 +51,20 @@
   padding: 1rem;
   transition: background-color 0.3s ease;
 
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
   &:hover, &[aria-current='page'] {
 	  background-color: #aaa2;
     color: var(--accent-color)
+  }
+
+  &:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: -2px;
+    color: var(--accent-color);
   }
 }
 

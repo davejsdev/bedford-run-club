@@ -5,11 +5,9 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute, faPersonRunning, faImages, faMedal } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC = ({ path }: { path?: string }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleMenu = () => setIsOpen(!isOpen);
-
-	const currentRoute = window.location.pathname;
 
 	return (
 		<nav className={classes.navbar}>
@@ -21,25 +19,25 @@ const Navbar: React.FC = () => {
 				
 				<ul className={classes.navMenu} data-is-open={isOpen}>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/routes" aria-current={currentRoute === '/routes' ? 'page' : undefined}>
+						<a className={classes.navLink} href="/routes" aria-current={path === '/routes' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faRoute} />
 							Route
 							</a>
 					</li>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/about" aria-current={currentRoute === '/about' ? 'page' : undefined}>
+						<a className={classes.navLink} href="/about" aria-current={path === '/about' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faPersonRunning} />
 							About
 							</a>
 					</li>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/races" aria-current={currentRoute === '/races' ? 'page' : undefined}>
+						<a className={classes.navLink} href="/races" aria-current={path === '/races' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faMedal} />
 							Races
 						</a>
 					</li>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/photos" aria-current={currentRoute === '/photos' ? 'page' : undefined}>
+						<a className={classes.navLink} href="/photos" aria-current={path === '/photos' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faImages} />
 							Photos
 						</a>
