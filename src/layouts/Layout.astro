@@ -11,12 +11,12 @@ interface Props {
 	pathname?: string;
 	frontmatter?: {
 		title?: string;
-		description?: string;
-		pathname?: string;
+		description?: string; 
+		pathname?: string; 
 	};
 }
 
-const { frontmatter, title, pathname, description = 'Join us every Tuesday at the Garrison Seaport Brewery at 6pm! Nothing fancy, just some sweat and a good time. All runners welcome.' } = Astro.props;
+const { frontmatter, title, description = 'Join us every Tuesday at the Garrison Seaport Brewery at 6pm! Nothing fancy, just some sweat and a good time. All runners welcome.' } = Astro.props;
 
 const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} | Bedford Run Club` : 'Bedford Run Club';
 
@@ -27,14 +27,14 @@ const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} 
 <html lang="en" transition:animate={fade({ duration: '0.5s' })}>
 	<head>
 		<SEOMetadata
-			siteName={'Bedford Run Club'}
+			siteName="Bedford Run Club"
 			title={fullTitle}
 			description={description}
 			image={CoverImage.src}
-			favicon={'/favicon.png'}
+			favicon="/favicon.png"
 			astroSitemap={true}
 			canonicalUrl={Astro.url.toString()}
-			type={'website'}
+			type="website"
 			astroGenerator={true}
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -59,7 +59,6 @@ const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} 
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-
 
 		--primary-color: #091064;
 		--accent-color: #FDD44F;
