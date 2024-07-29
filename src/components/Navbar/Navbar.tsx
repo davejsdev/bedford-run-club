@@ -5,7 +5,7 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute, faPersonRunning, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar: React.FC = ({ path }: { path?: string }) => {
+const Navbar = ({ path }: { path?: string }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleMenu = () => setIsOpen(!isOpen);
 
