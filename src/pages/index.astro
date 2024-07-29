@@ -7,19 +7,37 @@ import bannerImage from '../assets/brc-group.png'
 ---
 
 <Layout>
-	<h1>Bedford Run Club</h1>
-	<p>
-		Welcome to the Bedford Run Club! We have runners of all levels, from
-		beginners to experienced marathoners. We welcome everyone to join us!
-	</p>
-	<div class="image-wrapper">
-		<Image class="banner-image" src={bannerImage} alt="Runners on a trail"  />
-	</div>
-	<h2>Weekly Run</h2>
-	<p>
-		We meet every Tuesday at 6:00 PM at the Garrison Brewery. We run a 7.2km and loop through Point Pleasant Park. After the run, we head to the brewery for a drink and socialize.
-	</p>
-	<ButtonLink href='/weekly-run'>More about our weekly run</ButtonLink>
+	<section>
+
+		<h1>Bedford Run Club</h1>
+		<p>
+			Welcome to the Bedford Run Club! We have runners of all levels, from
+			beginners to experienced marathoners. We welcome everyone to join us!
+		</p>
+		<div class="image-wrapper">
+			<Image class="banner-image" src={bannerImage} alt="Runners on a trail"  />
+		</div>
+	</section>
+	<section>
+
+		<h2>Weekly Run</h2>
+		<p>
+			We meet every Tuesday at 6:00 PM at the Garrison Brewery. We run a 7.2km
+			loop (5k option available) through Point Pleasant Park. After the run, we 
+			head to the brewery for a drink and socialize.
+		</p>
+		<ButtonLink href='/routes'>Our weekly run route</ButtonLink>
+	</section>
+	<br />
+	<section>
+
+		<h2>Events</h2>
+		<p>
+			In addition to our weekly runs, we also host special events in partnership with local busniesses. Check out our events page to see what's coming up!
+		</p>
+		<ButtonLink href='/events'>Upcoming events</ButtonLink>
+	</section>
+	<br />
 </Layout>
 
 <style>

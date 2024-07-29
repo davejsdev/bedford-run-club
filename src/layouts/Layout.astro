@@ -111,4 +111,17 @@ const fullTitle = title || frontmatter?.title ? `${title || frontmatter?.title} 
 		border-width: 0 !important;
 		padding: 0;
 	}
+
+	.calendar-embed {
+		position: relative;
+		padding-bottom: 70%;
+
+		& iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
 </style>

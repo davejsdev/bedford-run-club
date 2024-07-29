@@ -3,7 +3,7 @@ import classes from './Navbar.module.scss';
 import logo from '../../assets/ns-crest.png';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRoute, faPersonRunning, faImages, faMedal } from '@fortawesome/free-solid-svg-icons';
+import { faRoute, faPersonRunning, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = ({ path }: { path?: string }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,29 +19,29 @@ const Navbar: React.FC = ({ path }: { path?: string }) => {
 				
 				<ul className={classes.navMenu} data-is-open={isOpen}>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/routes" aria-current={path === '/routes' ? 'page' : undefined}>
-						<FontAwesomeIcon icon={faRoute} />
-							Route
-							</a>
-					</li>
-					<li className={classes.navItem}>
 						<a className={classes.navLink} href="/about" aria-current={path === '/about' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faPersonRunning} />
 							About
 							</a>
 					</li>
 					<li className={classes.navItem}>
-						<a className={classes.navLink} href="/races" aria-current={path === '/races' ? 'page' : undefined}>
-						<FontAwesomeIcon icon={faMedal} />
-							Races
-						</a>
+						<a className={classes.navLink} href="/routes" aria-current={path === '/routes' ? 'page' : undefined}>
+						<FontAwesomeIcon icon={faRoute} />
+							Route
+							</a>
 					</li>
 					<li className={classes.navItem}>
+						<a className={classes.navLink} href="/events" aria-current={path === '/events' ? 'page' : undefined}>
+						<FontAwesomeIcon icon={faCalendarAlt} />
+							Events
+						</a>
+					</li>
+					{/* <li className={classes.navItem}>
 						<a className={classes.navLink} href="/photos" aria-current={path === '/photos' ? 'page' : undefined}>
 						<FontAwesomeIcon icon={faImages} />
 							Photos
 						</a>
-					</li>
+					</li> */}
 				</ul>
 				<SocialLinks />
 			</div>
